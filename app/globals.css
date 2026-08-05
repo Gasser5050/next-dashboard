@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --default-font-family: sans-serif;
+
+  --breakpoint-xs: 460px;
+
+  --text-xxs: 10px;
+  --text-md: 16px;
+
+  --animate-typewriter: typewriter 3s ease-in-out forwards;
+  --animate-arrow-forward: forward 1.2s ease-in-out infinite;
+}
+
+@keyframes forward {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+    border-color: transparent;
+  }
+}
