@@ -1,0 +1,32 @@
+[
+  {
+    "name": "shirts",
+    "title": "Shirts Collection",
+    "tagline": "Classic silhouettes cut from heavy-ounce cotton blends.",
+    "meta": "Available in S, M, L, XL"
+  },
+  {
+    "name": "hoodies",
+    "title": "Premium Hoodies",
+    "tagline": "Custom-milled fleece weights built for durable daily wear.",
+    "meta": "Premium Fleece Blends"
+  },
+  {
+    "name": "pants",
+    "title": "Relaxed Trousers & Pants",
+    "tagline": "Tailored everyday utility pants designed with geometric seam detail.",
+    "meta": "Waist Sizes 30 through 38"
+  },
+  {
+    "name": "shoes",
+    "title": "Footwear & Shoes",
+    "tagline": "Minimalist vulcanized profile constructions emphasizing longevity.",
+    "meta": "Sized European 35 to 42"
+  },
+  {
+    "name": "jackets",
+    "title": "Technical Jackets",
+    "tagline": "Outerwear shells optimized for structural utility and wind protection.",
+    "meta": "Limited Edition Drops"
+  }
+]
