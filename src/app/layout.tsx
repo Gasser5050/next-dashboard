@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     template: "%s | My Dashboard"
   },
   description: "A modern Next.js dashboard application",
+  openGraph: {
+    type: "profile",
+    firstName: "Gasser",
+    lastName: "Elnaggar"
+  },
   robots: {
     index: true,
     follow: true

@@ -10,7 +10,7 @@ type UserType = {
   };
 };
 
-export const getUser = cache((id: string) => {
+export const getUser = cache(async (id: string) => {
   const numericId = Number(id);
   if (isNaN(numericId)) return null;
 

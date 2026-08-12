@@ -8,14 +8,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Fetch all posts and users for dynamic routing
   const [posts, users] = await Promise.all([
-    prisma.post.findMany({ select: { id: true, updatedAt: true } }),
+    prisma.post.findMany({ select: { id: true } }),
     prisma.user.findMany({ select: { id: true } })
   ]);
 
   // Dynamic Post URLs
   const postUrls: MetadataRoute.Sitemap = posts.map(post => ({
     url: `${baseUrl}/posts/${post.id}`,
-    lastModified: post.updatedAt || new Date(),
+    lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.8
   }));
