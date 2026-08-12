@@ -1,0 +1,57 @@
+// npx prisma migrate dev --name init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id          Int    @id @default(autoincrement())
+  name        String
+  username    String @unique
+  email       String @unique
+  phone       String
+  website     String
+  street      String
+  suite       String
+  city        String
+  zipcode     String
+  companyName String
+
+  posts Post[]
+  todos Todo[]
+}
+
+model Post {
+  id Int @id @default(autoincrement())
+
+  title String
+  body  String
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+
+  comments Comment[]
+}
+
+model Todo {
+  id        Int     @id @default(autoincrement())
+  title     String
+  completed Boolean @default(false)
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+}
+
+model Comment {
+  id    Int    @id @default(autoincrement())
+  email String
+  body  String
+
+  post   Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId Int
+}
