@@ -1,14 +1,11 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import PostCard from "../posts/PostCard";
+import { getUser } from "@/app/users/[id]/page";
 
 async function UserInfo({ id }: { id: string }) {
   const [user, posts, todos] = await Promise.all([
-    prisma.user.findUnique({
-      where: {
-        id: Number(id)
-      }
-    }),
+    getUser(id),
     prisma.post.findMany({
       where: {
         userId: Number(id)

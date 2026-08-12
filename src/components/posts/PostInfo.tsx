@@ -1,13 +1,10 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
+import { getPost } from "@/app/posts/[id]/page";
 
 async function PostInfo({ id }: { id: string }) {
-  const post = await prisma.post.findUnique({
-    where: {
-      id: Number(id)
-    }
-  });
+  const post = await getPost(id);
 
   if (!post) notFound();
 
